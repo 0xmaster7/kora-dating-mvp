@@ -27,7 +27,7 @@ export function MobileAppSheet() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setMobileSheetOpen(false)}
-            className="absolute inset-0 bg-[#161615]/40 backdrop-blur-[2px]"
+            className="absolute inset-0 bg-[#261428]/40 backdrop-blur-[2px]"
           />
 
           <motion.div
@@ -35,21 +35,21 @@ export function MobileAppSheet() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 24 }}
             transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
-            className="relative w-full sm:max-w-lg bg-white rounded-t-3xl sm:rounded-2xl hairline editorial-shadow p-6 space-y-5 safe-pb"
+            className="relative w-full sm:max-w-lg bg-white rounded-t-3xl sm:rounded-3xl hairline editorial-shadow p-6 space-y-5 safe-pb"
           >
             <div className="flex items-start justify-between gap-4">
               <div className="space-y-1">
-                <div className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-[#2F5E4E]">
+                <div className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-[#1E8E72]">
                   <Smartphone className="h-3.5 w-3.5" />
                   <span>PWA + Capacitor Android</span>
                 </div>
-                <h2 className="font-serif text-3xl text-[#161615]">
+                <h2 className="font-display font-bold text-3xl text-[#261428]">
                   Install Kora on Mobile
                 </h2>
               </div>
               <button
                 onClick={() => setMobileSheetOpen(false)}
-                className="p-1.5 rounded-full text-[#6B6863] hover:text-[#161615] hover:bg-[#FAF8F5] cursor-pointer"
+                className="p-1.5 rounded-full text-[#6E586B] hover:text-[#261428] hover:bg-[#FFF7F2] cursor-pointer"
                 aria-label="Close mobile sheet"
               >
                 <X className="h-4 w-4" />
@@ -57,18 +57,18 @@ export function MobileAppSheet() {
             </div>
 
             {/* PWA Install */}
-            <div className="rounded-xl bg-[#FAF8F5] hairline p-4 space-y-2">
-              <div className="flex items-center gap-2 text-xs font-semibold text-[#161615]">
-                <Download className="h-3.5 w-3.5 text-[#B8502D]" />
+            <div className="rounded-xl bg-[#FFF7F2] hairline p-4 space-y-2">
+              <div className="flex items-center gap-2 text-xs font-semibold text-[#261428]">
+                <Download className="h-3.5 w-3.5 text-[#E84A5F]" />
                 <span>Option 1: Instant Mobile PWA (iOS &amp; Android)</span>
               </div>
-              <ul className="text-xs text-[#6B6863] space-y-1 list-disc list-inside leading-relaxed">
+              <ul className="text-xs text-[#6E586B] space-y-1 list-disc list-inside leading-relaxed">
                 <li>
-                  <span className="font-medium text-[#161615]">iOS Safari:</span>{" "}
+                  <span className="font-medium text-[#261428]">iOS Safari:</span>{" "}
                   Tap Share → <span className="italic">Add to Home Screen</span>
                 </li>
                 <li>
-                  <span className="font-medium text-[#161615]">Android Chrome:</span>{" "}
+                  <span className="font-medium text-[#261428]">Android Chrome:</span>{" "}
                   Tap Menu (⋮) → <span className="italic">Install app</span>
                 </li>
               </ul>
@@ -77,21 +77,21 @@ export function MobileAppSheet() {
             {/* Android APK via Capacitor */}
             <div className="rounded-xl bg-white hairline p-4 space-y-3">
               <div className="flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2 text-xs font-semibold text-[#161615]">
-                  <Terminal className="h-3.5 w-3.5 text-[#2F5E4E]" />
+                <div className="flex items-center gap-2 text-xs font-semibold text-[#261428]">
+                  <Terminal className="h-3.5 w-3.5 text-[#1E8E72]" />
                   <span>Option 2: Build Android Debug APK (Capacitor)</span>
                 </div>
-                <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-[#2F5E4E]/10 text-[#2F5E4E]">
+                <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-[#1E8E72]/10 text-[#1E8E72]">
                   /android synced
                 </span>
               </div>
-              <p className="text-xs text-[#6B6863] leading-relaxed">
-                The Capacitor <code className="text-[#161615]">/android</code>{" "}
+              <p className="text-xs text-[#6E586B] leading-relaxed">
+                The Capacitor <code className="text-[#261428]">/android</code>{" "}
                 project is pre-initialized and synced with Next.js static export
-                (<code className="text-[#161615]">out/</code>). On any machine
+                (<code className="text-[#261428]">out/</code>). On any machine
                 with Android SDK installed, run:
               </p>
-              <div className="relative rounded-xl bg-[#161615] text-[#FAF8F5] p-3 pr-10 font-mono text-[11px] overflow-x-auto">
+              <div className="relative rounded-xl bg-[#261428] text-[#FFF7F2] p-3 pr-10 font-mono text-[11px] overflow-x-auto">
                 <code>{APK_CMD}</code>
                 <button
                   onClick={handleCopy}
@@ -105,9 +105,9 @@ export function MobileAppSheet() {
                   )}
                 </button>
               </div>
-              <p className="text-[11px] text-[#9A9690]">
+              <p className="text-[11px] text-[#9D889A]">
                 Output APK:{" "}
-                <code className="text-[#6B6863]">
+                <code className="text-[#6E586B]">
                   android/app/build/outputs/apk/debug/app-debug.apk
                 </code>
               </p>

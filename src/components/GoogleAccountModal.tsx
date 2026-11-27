@@ -20,7 +20,7 @@ export function GoogleAccountModal() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setGoogleModalOpen(false)}
-            className="absolute inset-0 bg-[#161615]/35 backdrop-blur-[2px]"
+            className="absolute inset-0 bg-[#261428]/35 backdrop-blur-[2px]"
           />
 
           <motion.div
@@ -31,29 +31,29 @@ export function GoogleAccountModal() {
             role="dialog"
             aria-modal="true"
             aria-label="Sign in with Google"
-            className="relative w-full max-w-md bg-white rounded-2xl hairline editorial-shadow overflow-hidden"
+            className="relative w-full max-w-md bg-white rounded-3xl hairline editorial-shadow overflow-hidden"
           >
             {/* Header */}
             <div className="px-6 py-5 hairline-b flex items-start justify-between gap-4">
               <div className="space-y-1">
-                <div className="flex items-center gap-2 text-xs text-[#6B6863]">
-                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#FAF8F5] hairline text-[11px] font-semibold text-[#161615]">
+                <div className="flex items-center gap-2 text-xs text-[#6E586B]">
+                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#FFF7F2] hairline text-[11px] font-semibold text-[#261428]">
                     G
                   </span>
                   <span>Sign in with Google</span>
                 </div>
-                <h2 className="font-serif text-2xl text-[#161615]">
+                <h2 className="font-display font-bold text-2xl text-[#261428]">
                   Choose an account
                 </h2>
-                <p className="text-xs text-[#6B6863]">
+                <p className="text-xs text-[#6E586B]">
                   to continue to{" "}
-                  <span className="font-medium text-[#161615]">Kora</span>{" "}
+                  <span className="font-medium text-[#261428]">Kora</span>{" "}
                   (Interactive Prototype)
                 </p>
               </div>
               <button
                 onClick={() => setGoogleModalOpen(false)}
-                className="p-1.5 rounded-full text-[#6B6863] hover:text-[#161615] hover:bg-[#FAF8F5] transition-colors cursor-pointer"
+                className="p-1.5 rounded-full text-[#6E586B] hover:text-[#261428] hover:bg-[#FFF7F2] transition-colors cursor-pointer"
                 aria-label="Close modal"
               >
                 <X className="h-4 w-4" />
@@ -66,7 +66,7 @@ export function GoogleAccountModal() {
                 <button
                   key={acc.id}
                   onClick={() => signInWithDemoAccount(acc, skipOnboarding)}
-                  className="w-full text-left p-3.5 rounded-xl hairline hover:border-[#161615]/25 hover:bg-[#FAF8F5] transition-all flex items-center gap-3.5 group cursor-pointer"
+                  className="w-full text-left p-3.5 rounded-xl hairline hover:border-[#261428]/25 hover:bg-[#FFF7F2] transition-all flex items-center gap-3.5 group cursor-pointer"
                 >
                   <img
                     src={acc.avatarUrl}
@@ -75,29 +75,29 @@ export function GoogleAccountModal() {
                   />
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2">
-                      <p className="text-sm font-semibold text-[#161615] truncate">
+                      <p className="text-sm font-semibold text-[#261428] truncate">
                         {acc.name}
                       </p>
-                      <span className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-[#F3EFE9] text-[#6B6863]">
+                      <span className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-[#FFEFE6] text-[#6E586B]">
                         Demo {idx === 0 ? "A" : "B"}
                       </span>
                     </div>
-                    <p className="text-xs text-[#6B6863] truncate">
+                    <p className="text-xs text-[#6E586B] truncate">
                       {acc.email}
                     </p>
-                    <p className="text-[11px] text-[#9A9690] truncate mt-0.5">
+                    <p className="text-[11px] text-[#9D889A] truncate mt-0.5">
                       {acc.role} @ {acc.company} · {acc.gradYear} {acc.college}
                     </p>
                   </div>
-                  <ArrowRight className="h-4 w-4 text-[#9A9690] group-hover:text-[#B8502D] group-hover:translate-x-0.5 transition-all shrink-0" />
+                  <ArrowRight className="h-4 w-4 text-[#9D889A] group-hover:text-[#E84A5F] group-hover:translate-x-0.5 transition-all shrink-0" />
                 </button>
               ))}
             </div>
 
             {/* Flow choice toggle */}
-            <div className="px-6 py-4 bg-[#FAF8F5] hairline-t space-y-3">
+            <div className="px-6 py-4 bg-[#FFF7F2] hairline-t space-y-3">
               <label className="flex items-center justify-between gap-3 cursor-pointer select-none">
-                <span className="text-xs text-[#6B6863]">
+                <span className="text-xs text-[#6E586B]">
                   Skip onboarding &amp; jump straight to Thursday Drop
                 </span>
                 <button
@@ -106,7 +106,7 @@ export function GoogleAccountModal() {
                   aria-checked={skipOnboarding}
                   onClick={() => setSkipOnboarding((v) => !v)}
                   className={`relative inline-flex h-5 w-9 shrink-0 items-center rounded-full transition-colors cursor-pointer ${
-                    skipOnboarding ? "bg-[#B8502D]" : "bg-[#161615]/15"
+                    skipOnboarding ? "bg-[#E84A5F]" : "bg-[#261428]/15"
                   }`}
                 >
                   <span
@@ -117,10 +117,10 @@ export function GoogleAccountModal() {
                 </button>
               </label>
 
-              <div className="flex items-center gap-1.5 text-[11px] text-[#9A9690]">
-                <ShieldCheck className="h-3.5 w-3.5 text-[#2F5E4E] shrink-0" />
+              <div className="flex items-center gap-1.5 text-[11px] text-[#9D889A]">
+                <ShieldCheck className="h-3.5 w-3.5 text-[#1E8E72] shrink-0" />
                 <span>
-                  OAuth-ready via <code className="text-[#6B6863]">NEXT_PUBLIC_GOOGLE_CLIENT_ID</code>
+                  OAuth-ready via <code className="text-[#6E586B]">NEXT_PUBLIC_GOOGLE_CLIENT_ID</code>
                 </span>
               </div>
             </div>

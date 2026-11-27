@@ -73,7 +73,7 @@ export function PromptRevealModal({ match, onClose }: PromptRevealModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="absolute inset-0 bg-[#161615]/40 backdrop-blur-[2px]"
+          className="absolute inset-0 bg-[#261428]/40 backdrop-blur-[2px]"
         />
 
         <motion.div
@@ -81,7 +81,7 @@ export function PromptRevealModal({ match, onClose }: PromptRevealModalProps) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.96, y: 12 }}
           transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-          className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-2xl hairline editorial-shadow"
+          className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-3xl hairline editorial-shadow"
         >
           {/* Header */}
           <div className="sticky top-0 z-10 bg-white/95 backdrop-blur-sm px-6 py-4 hairline-b flex items-center justify-between gap-4">
@@ -99,12 +99,12 @@ export function PromptRevealModal({ match, onClose }: PromptRevealModalProps) {
                 />
               </div>
               <div>
-                <h2 className="font-serif text-xl text-[#161615] leading-none">
+                <h2 className="font-display font-bold text-xl text-[#261428] leading-none">
                   {revealed
                     ? `You & ${match.name.split(" ")[0]} are connected`
                     : `Shared Prompt with ${match.name.split(" ")[0]}`}
                 </h2>
-                <p className="text-xs text-[#6B6863] mt-1">
+                <p className="text-xs text-[#6E586B] mt-1">
                   {revealed
                     ? "Both answers revealed · Photo unblurred"
                     : "Answer 2 scenario questions to reveal both replies & unblur photos"}
@@ -113,7 +113,7 @@ export function PromptRevealModal({ match, onClose }: PromptRevealModalProps) {
             </div>
             <button
               onClick={onClose}
-              className="p-1.5 rounded-full text-[#6B6863] hover:text-[#161615] hover:bg-[#FAF8F5] transition-colors cursor-pointer"
+              className="p-1.5 rounded-full text-[#6E586B] hover:text-[#261428] hover:bg-[#FFF7F2] transition-colors cursor-pointer"
               aria-label="Close prompt modal"
             >
               <X className="h-4 w-4" />
@@ -123,7 +123,7 @@ export function PromptRevealModal({ match, onClose }: PromptRevealModalProps) {
           {!revealed ? (
             <form onSubmit={handleSubmit} className="p-6 space-y-6">
               <div className="space-y-2">
-                <label className="block text-sm font-semibold text-[#161615]">
+                <label className="block text-sm font-semibold text-[#261428]">
                   01. {match.prompts.q1}
                 </label>
                 <textarea
@@ -132,12 +132,12 @@ export function PromptRevealModal({ match, onClose }: PromptRevealModalProps) {
                   value={a1}
                   onChange={(e) => setA1(e.target.value)}
                   placeholder="Share your honest take (2–3 lines)..."
-                  className="w-full rounded-xl bg-[#FAF8F5] hairline px-4 py-3 text-sm text-[#161615] placeholder:text-[#9A9690] focus:outline-none focus:border-[#161615]/30 resize-none"
+                  className="w-full rounded-xl bg-[#FFF7F2] hairline px-4 py-3 text-sm text-[#261428] placeholder:text-[#9D889A] focus:outline-none focus:border-[#261428]/30 resize-none"
                 />
               </div>
 
               <div className="space-y-2">
-                <label className="block text-sm font-semibold text-[#161615]">
+                <label className="block text-sm font-semibold text-[#261428]">
                   02. {match.prompts.q2}
                 </label>
                 <textarea
@@ -146,7 +146,7 @@ export function PromptRevealModal({ match, onClose }: PromptRevealModalProps) {
                   value={a2}
                   onChange={(e) => setA2(e.target.value)}
                   placeholder="Keep it real and specific..."
-                  className="w-full rounded-xl bg-[#FAF8F5] hairline px-4 py-3 text-sm text-[#161615] placeholder:text-[#9A9690] focus:outline-none focus:border-[#161615]/30 resize-none"
+                  className="w-full rounded-xl bg-[#FFF7F2] hairline px-4 py-3 text-sm text-[#261428] placeholder:text-[#9D889A] focus:outline-none focus:border-[#261428]/30 resize-none"
                 />
               </div>
 
@@ -154,16 +154,16 @@ export function PromptRevealModal({ match, onClose }: PromptRevealModalProps) {
                 <button
                   type="button"
                   onClick={fillThoughtfulSample}
-                  className="inline-flex items-center gap-1.5 text-xs font-medium text-[#6B6863] hover:text-[#161615] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 text-xs font-medium text-[#6E586B] hover:text-[#261428] transition-colors cursor-pointer"
                 >
-                  <Sparkles className="h-3.5 w-3.5 text-[#B8502D]" />
+                  <Sparkles className="h-3.5 w-3.5 text-[#E84A5F]" />
                   <span>Fill sample answers (quick test)</span>
                 </button>
 
                 <button
                   type="submit"
                   disabled={!a1.trim() || !a2.trim()}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#B8502D] hover:bg-[#9E4223] disabled:opacity-45 text-white text-sm font-medium transition-colors cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#E84A5F] hover:bg-[#D2374C] disabled:opacity-45 text-white text-sm font-medium transition-colors cursor-pointer"
                 >
                   <span>Reveal Answers &amp; Unblur Photo</span>
                   <ArrowRight className="h-4 w-4" />
@@ -173,8 +173,8 @@ export function PromptRevealModal({ match, onClose }: PromptRevealModalProps) {
           ) : (
             <div className="p-6 space-y-6">
               {/* Progressive Photo Unblur Showcase */}
-              <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 items-center bg-[#FAF8F5] rounded-2xl hairline p-4">
-                <div className="sm:col-span-5 relative aspect-[4/3] rounded-xl overflow-hidden bg-[#F3EFE9]">
+              <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 items-center bg-[#FFF7F2] rounded-2xl hairline p-4">
+                <div className="sm:col-span-5 relative aspect-[4/3] rounded-xl overflow-hidden bg-[#FFEFE6]">
                   <motion.img
                     src={match.photoUrl}
                     alt={match.name}
@@ -187,7 +187,7 @@ export function PromptRevealModal({ match, onClose }: PromptRevealModalProps) {
                     initial={{ opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.45 }}
-                    className="absolute bottom-2.5 left-2.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#2F5E4E] text-white text-[11px] font-medium"
+                    className="absolute bottom-2.5 left-2.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#1E8E72] text-white text-[11px] font-medium"
                   >
                     <LockOpen className="h-3 w-3" />
                     <span>Unblurred</span>
@@ -195,17 +195,17 @@ export function PromptRevealModal({ match, onClose }: PromptRevealModalProps) {
                 </div>
 
                 <div className="sm:col-span-7 space-y-2">
-                  <div className="inline-flex items-center gap-1.5 text-xs font-medium text-[#2F5E4E]">
+                  <div className="inline-flex items-center gap-1.5 text-xs font-medium text-[#1E8E72]">
                     <ShieldCheck className="h-3.5 w-3.5" />
                     <span>Verified ’{String(match.gradYear).slice(-2)} Grad</span>
                   </div>
-                  <h3 className="font-serif text-3xl text-[#161615]">
+                  <h3 className="font-display font-bold text-3xl text-[#261428]">
                     {match.name}, {match.age}
                   </h3>
-                  <p className="text-xs text-[#6B6863]">
+                  <p className="text-xs text-[#6E586B]">
                     {match.role} · {match.city}
                   </p>
-                  <p className="text-xs text-[#6B6863] leading-relaxed pt-1">
+                  <p className="text-xs text-[#6E586B] leading-relaxed pt-1">
                     Conversation unlocked in Active Chats. Take your time—no
                     24-hour expiry timers.
                   </p>
@@ -215,23 +215,23 @@ export function PromptRevealModal({ match, onClose }: PromptRevealModalProps) {
               {/* Side-by-Side Answers */}
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <p className="text-xs font-semibold text-[#6B6863]">
+                  <p className="text-xs font-semibold text-[#6E586B]">
                     01. {match.prompts.q1}
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div className="rounded-xl bg-[#FAF8F5] hairline p-3.5 space-y-1">
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-[#B8502D]">
+                    <div className="rounded-xl bg-[#FFF7F2] hairline p-3.5 space-y-1">
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-[#E84A5F]">
                         Your Answer
                       </span>
-                      <p className="text-xs leading-relaxed text-[#161615]">
+                      <p className="text-xs leading-relaxed text-[#261428]">
                         {a1}
                       </p>
                     </div>
                     <div className="rounded-xl bg-white hairline p-3.5 space-y-1">
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-[#2F5E4E]">
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-[#1E8E72]">
                         {match.name.split(" ")[0]}’s Answer
                       </span>
-                      <p className="text-xs leading-relaxed text-[#161615]">
+                      <p className="text-xs leading-relaxed text-[#261428]">
                         {match.prompts.q1Answer}
                       </p>
                     </div>
@@ -239,23 +239,23 @@ export function PromptRevealModal({ match, onClose }: PromptRevealModalProps) {
                 </div>
 
                 <div className="space-y-2">
-                  <p className="text-xs font-semibold text-[#6B6863]">
+                  <p className="text-xs font-semibold text-[#6E586B]">
                     02. {match.prompts.q2}
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div className="rounded-xl bg-[#FAF8F5] hairline p-3.5 space-y-1">
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-[#B8502D]">
+                    <div className="rounded-xl bg-[#FFF7F2] hairline p-3.5 space-y-1">
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-[#E84A5F]">
                         Your Answer
                       </span>
-                      <p className="text-xs leading-relaxed text-[#161615]">
+                      <p className="text-xs leading-relaxed text-[#261428]">
                         {a2}
                       </p>
                     </div>
                     <div className="rounded-xl bg-white hairline p-3.5 space-y-1">
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-[#2F5E4E]">
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-[#1E8E72]">
                         {match.name.split(" ")[0]}’s Answer
                       </span>
-                      <p className="text-xs leading-relaxed text-[#161615]">
+                      <p className="text-xs leading-relaxed text-[#261428]">
                         {match.prompts.q2Answer}
                       </p>
                     </div>
@@ -266,7 +266,7 @@ export function PromptRevealModal({ match, onClose }: PromptRevealModalProps) {
               <div className="flex justify-end pt-2 hairline-t">
                 <button
                   onClick={handleOpenChat}
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#161615] hover:bg-[#2a2a28] text-white text-sm font-medium transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#261428] hover:bg-[#3D2240] text-white text-sm font-medium transition-colors cursor-pointer"
                 >
                   <span>Open Conversation</span>
                   <ArrowRight className="h-4 w-4" />

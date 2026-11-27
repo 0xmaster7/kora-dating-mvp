@@ -2,6 +2,7 @@
 
 import React from "react";
 import {
+  Heart,
   MessageCircle,
   Shield,
   ShieldCheck,
@@ -35,16 +36,21 @@ export function AppShell() {
   const account = state.account;
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#161615] flex flex-col lg:flex-row">
+    <div className="min-h-screen bg-[#FFF7F2] text-[#261428] flex flex-col lg:flex-row">
       {/* Desktop Left Rail */}
-      <aside className="hidden lg:flex lg:flex-col lg:w-64 lg:fixed lg:inset-y-0 bg-[#FAF8F5] hairline-r px-5 py-6 justify-between z-20">
+      <aside className="hidden lg:flex lg:flex-col lg:w-64 lg:fixed lg:inset-y-0 bg-[#FFF7F2] hairline-r px-5 py-6 justify-between z-20">
         <div className="space-y-8">
           {/* Brand */}
           <div className="px-2">
-            <span className="font-serif text-[30px] leading-none tracking-tight text-[#161615]">
-              Kora<span className="text-[#B8502D]">.</span>
-            </span>
-            <p className="text-[11px] text-[#6B6863] mt-1">
+            <div className="flex items-center gap-2.5">
+              <div className="h-8 w-8 rounded-xl bg-[#E84A5F] text-white flex items-center justify-center playful-shadow -rotate-3">
+                <Heart className="h-4 w-4 fill-white" />
+              </div>
+              <span className="font-display font-extrabold text-[24px] leading-none tracking-tight text-[#261428]">
+                kora
+              </span>
+            </div>
+            <p className="text-[11px] font-medium text-[#6E586B] mt-2">
               Verified Alumni · 2020–2023
             </p>
           </div>
@@ -60,14 +66,14 @@ export function AppShell() {
                   onClick={() => setActiveTab(item.id)}
                   className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm transition-colors cursor-pointer ${
                     active
-                      ? "bg-white text-[#161615] font-semibold hairline shadow-[0_1px_2px_rgba(22,22,21,0.04)]"
-                      : "text-[#6B6863] hover:text-[#161615] hover:bg-white/60"
+                      ? "bg-white text-[#261428] font-semibold hairline shadow-[0_1px_2px_rgba(22,22,21,0.04)]"
+                      : "text-[#6E586B] hover:text-[#261428] hover:bg-white/60"
                   }`}
                 >
                   <span className="flex items-center gap-2.5">
                     <Icon
                       className={`h-4 w-4 ${
-                        active ? "text-[#B8502D]" : "text-[#9A9690]"
+                        active ? "text-[#E84A5F]" : "text-[#9D889A]"
                       }`}
                     />
                     <span>{item.label}</span>
@@ -76,8 +82,8 @@ export function AppShell() {
                     <span
                       className={`text-[11px] font-medium px-2 py-0.5 rounded-full ${
                         activeThreads.length >= 3
-                          ? "bg-[#B8502D]/10 text-[#B8502D]"
-                          : "bg-[#F3EFE9] text-[#6B6863]"
+                          ? "bg-[#E84A5F]/10 text-[#E84A5F]"
+                          : "bg-[#FFEFE6] text-[#6E586B]"
                       }`}
                     >
                       {activeThreads.length}/3
@@ -93,9 +99,9 @@ export function AppShell() {
         <div className="space-y-3">
           <button
             onClick={() => setMobileSheetOpen(true)}
-            className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl hairline bg-white/80 hover:bg-white text-xs font-medium text-[#161615] transition-colors cursor-pointer"
+            className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl hairline bg-white/80 hover:bg-white text-xs font-medium text-[#261428] transition-colors cursor-pointer"
           >
-            <Smartphone className="h-4 w-4 text-[#2F5E4E]" />
+            <Smartphone className="h-4 w-4 text-[#1E8E72]" />
             <span>Get Mobile App / APK</span>
           </button>
 
@@ -111,10 +117,10 @@ export function AppShell() {
                 className="h-9 w-9 rounded-full object-cover hairline shrink-0"
               />
               <div className="min-w-0">
-                <p className="text-xs font-semibold text-[#161615] truncate">
+                <p className="text-xs font-semibold text-[#261428] truncate">
                   {account.name}
                 </p>
-                <p className="text-[11px] text-[#2F5E4E] flex items-center gap-1 truncate">
+                <p className="text-[11px] text-[#1E8E72] flex items-center gap-1 truncate">
                   <ShieldCheck className="h-3 w-3 shrink-0" />
                   <span>Verified ’{String(account.gradYear).slice(-2)}</span>
                 </p>
@@ -125,16 +131,21 @@ export function AppShell() {
       </aside>
 
       {/* Mobile Top Header */}
-      <header className="lg:hidden sticky top-0 z-20 bg-[#FAF8F5]/95 backdrop-blur-sm hairline-b px-4 h-14 flex items-center justify-between">
-        <span className="font-serif text-2xl leading-none">
-          Kora<span className="text-[#B8502D]">.</span>
-        </span>
+      <header className="lg:hidden sticky top-0 z-20 bg-[#FFF7F2]/95 backdrop-blur-sm hairline-b px-4 h-14 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="h-7 w-7 rounded-xl bg-[#E84A5F] text-white flex items-center justify-center -rotate-3">
+            <Heart className="h-3.5 w-3.5 fill-white" />
+          </div>
+          <span className="font-display font-extrabold text-xl leading-none text-[#261428]">
+            kora
+          </span>
+        </div>
         <div className="flex items-center gap-2">
           <button
             onClick={() => setMobileSheetOpen(true)}
-            className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full hairline bg-white text-[11px] font-medium text-[#161615]"
+            className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full hairline bg-white text-[11px] font-medium text-[#261428]"
           >
-            <Smartphone className="h-3.5 w-3.5 text-[#2F5E4E]" />
+            <Smartphone className="h-3.5 w-3.5 text-[#1E8E72]" />
             <span>App</span>
           </button>
           {account && (
@@ -173,13 +184,13 @@ export function AppShell() {
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}
                 className={`flex flex-col items-center justify-center gap-0.5 text-[11px] transition-colors ${
-                  active ? "text-[#B8502D] font-semibold" : "text-[#6B6863]"
+                  active ? "text-[#E84A5F] font-semibold" : "text-[#6E586B]"
                 }`}
               >
                 <div className="relative">
                   <Icon className="h-4.5 w-4.5" />
                   {item.id === "chats" && (
-                    <span className="absolute -top-1.5 -right-3 text-[9px] font-semibold px-1 rounded-full bg-[#161615] text-white">
+                    <span className="absolute -top-1.5 -right-3 text-[9px] font-semibold px-1 rounded-full bg-[#261428] text-white">
                       {activeThreads.length}/3
                     </span>
                   )}

@@ -58,10 +58,10 @@ export function ActiveChatsView() {
       {/* Header with Capacity Indicator */}
       <header className="pb-5 hairline-b flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          <h1 className="font-serif text-4xl leading-tight text-[#161615]">
+          <h1 className="font-display font-bold text-4xl leading-tight text-[#261428]">
             Active Chats
           </h1>
-          <p className="text-sm text-[#6B6863] mt-1">
+          <p className="text-sm text-[#6E586B] mt-1">
             Three deliberate conversations at a time—zero ghosting, graceful
             closure.
           </p>
@@ -70,10 +70,10 @@ export function ActiveChatsView() {
         {/* Capacity Pill */}
         <div className="bg-white rounded-xl hairline px-4 py-2.5 flex items-center gap-3 self-start sm:self-auto shrink-0 whitespace-nowrap">
           <div className="text-xs whitespace-nowrap">
-            <span className="text-[#6B6863]">Active Conversations: </span>
+            <span className="text-[#6E586B]">Active Conversations: </span>
             <span
               className={`font-semibold ${
-                activeThreads.length >= 3 ? "text-[#B8502D]" : "text-[#161615]"
+                activeThreads.length >= 3 ? "text-[#E84A5F]" : "text-[#261428]"
               }`}
             >
               {activeThreads.length} / 3
@@ -86,9 +86,9 @@ export function ActiveChatsView() {
                 className={`h-2 w-4 rounded-full transition-colors ${
                   slot < activeThreads.length
                     ? activeThreads.length >= 3
-                      ? "bg-[#B8502D]"
-                      : "bg-[#2F5E4E]"
-                    : "bg-[#161615]/10"
+                      ? "bg-[#E84A5F]"
+                      : "bg-[#1E8E72]"
+                    : "bg-[#261428]/10"
                 }`}
               />
             ))}
@@ -97,27 +97,27 @@ export function ActiveChatsView() {
       </header>
 
       {/* Split Pane Chat Layout */}
-      <div className="bg-white rounded-2xl hairline editorial-shadow overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[540px]">
+      <div className="bg-white rounded-3xl hairline editorial-shadow overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[540px]">
         {/* Thread List */}
         <aside
           className={`lg:col-span-4 hairline-r flex flex-col ${
             mobileShowThread ? "hidden lg:flex" : "flex"
           }`}
         >
-          <div className="p-3.5 hairline-b text-[11px] font-semibold uppercase tracking-[0.08em] text-[#6B6863]">
+          <div className="p-3.5 hairline-b text-[11px] font-semibold uppercase tracking-[0.08em] text-[#6E586B]">
             Open Threads ({activeThreads.length})
           </div>
 
-          <div className="divide-y divide-[#161615]/[0.06] flex-1 overflow-y-auto">
+          <div className="divide-y divide-[#261428]/[0.06] flex-1 overflow-y-auto">
             {activeThreads.length === 0 ? (
               <div className="p-6 text-center space-y-3">
-                <p className="text-xs text-[#6B6863]">
+                <p className="text-xs text-[#6E586B]">
                   All 3 slots are open. Visit your Thursday Drop to start a
                   conversation.
                 </p>
                 <button
                   onClick={() => setActiveTab("drop")}
-                  className="text-xs font-medium text-[#B8502D] hover:underline cursor-pointer"
+                  className="text-xs font-medium text-[#E84A5F] hover:underline cursor-pointer"
                 >
                   Go to Thursday Drop →
                 </button>
@@ -135,7 +135,7 @@ export function ActiveChatsView() {
                       setShowPromptRecap(false);
                     }}
                     className={`w-full text-left p-4 flex items-start gap-3 transition-colors cursor-pointer ${
-                      isSelected ? "bg-[#FAF8F5]" : "hover:bg-[#FAF8F5]/60"
+                      isSelected ? "bg-[#FFF7F2]" : "hover:bg-[#FFF7F2]/60"
                     }`}
                   >
                     <img
@@ -145,18 +145,18 @@ export function ActiveChatsView() {
                     />
                     <div className="min-w-0 flex-1">
                       <div className="flex items-baseline justify-between gap-2">
-                        <p className="text-sm font-semibold text-[#161615] truncate">
+                        <p className="text-sm font-semibold text-[#261428] truncate">
                           {t.matchName}
                         </p>
-                        <span className="text-[10px] text-[#9A9690] shrink-0">
+                        <span className="text-[10px] text-[#9D889A] shrink-0">
                           ’{String(t.matchGradYear).slice(-2)}
                         </span>
                       </div>
-                      <p className="text-[11px] text-[#6B6863] truncate">
+                      <p className="text-[11px] text-[#6E586B] truncate">
                         {t.matchRole}
                       </p>
                       {lastMsg && (
-                        <p className="text-xs text-[#9A9690] truncate mt-1">
+                        <p className="text-xs text-[#9D889A] truncate mt-1">
                           {lastMsg.sender === "me" ? "You: " : ""}
                           {lastMsg.text}
                         </p>
@@ -170,11 +170,11 @@ export function ActiveChatsView() {
 
           {/* Archived / Politely Closed Threads */}
           {closedThreads.length > 0 && (
-            <div className="hairline-t bg-[#FAF8F5]/70">
+            <div className="hairline-t bg-[#FFF7F2]/70">
               <button
                 type="button"
                 onClick={() => setShowArchived((v) => !v)}
-                className="w-full px-4 py-3 flex items-center justify-between text-xs font-medium text-[#6B6863] hover:text-[#161615] cursor-pointer"
+                className="w-full px-4 py-3 flex items-center justify-between text-xs font-medium text-[#6E586B] hover:text-[#261428] cursor-pointer"
               >
                 <span className="inline-flex items-center gap-1.5">
                   <Archive className="h-3.5 w-3.5" />
@@ -187,7 +187,7 @@ export function ActiveChatsView() {
                 />
               </button>
               {showArchived && (
-                <div className="divide-y divide-[#161615]/[0.06] hairline-t">
+                <div className="divide-y divide-[#261428]/[0.06] hairline-t">
                   {closedThreads.map((t) => (
                     <button
                       key={t.id}
@@ -203,10 +203,10 @@ export function ActiveChatsView() {
                         className="h-8 w-8 rounded-full object-cover grayscale"
                       />
                       <div className="min-w-0 flex-1">
-                        <p className="text-xs font-medium text-[#161615] truncate">
+                        <p className="text-xs font-medium text-[#261428] truncate">
                           {t.matchName}
                         </p>
-                        <p className="text-[11px] text-[#9A9690] truncate">
+                        <p className="text-[11px] text-[#9D889A] truncate">
                           Closed {t.closedAt}
                         </p>
                       </div>
@@ -231,7 +231,7 @@ export function ActiveChatsView() {
                 <div className="flex items-center gap-3 min-w-0">
                   <button
                     onClick={() => setMobileShowThread(false)}
-                    className="lg:hidden p-1.5 -ml-1 rounded-full hover:bg-[#FAF8F5] text-[#6B6863]"
+                    className="lg:hidden p-1.5 -ml-1 rounded-full hover:bg-[#FFF7F2] text-[#6E586B]"
                     aria-label="Back to threads"
                   >
                     <ArrowLeft className="h-4 w-4" />
@@ -243,15 +243,15 @@ export function ActiveChatsView() {
                   />
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
-                      <h2 className="font-serif text-xl text-[#161615] truncate">
+                      <h2 className="font-display font-bold text-xl text-[#261428] truncate">
                         {selectedThread.matchName}
                       </h2>
-                      <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-medium text-[#2F5E4E] bg-[#2F5E4E]/[0.08] px-2 py-0.5 rounded-full">
+                      <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-medium text-[#1E8E72] bg-[#1E8E72]/[0.08] px-2 py-0.5 rounded-full">
                         <ShieldCheck className="h-3 w-3" />
                         Verified ’{String(selectedThread.matchGradYear).slice(-2)}
                       </span>
                     </div>
-                    <p className="text-xs text-[#6B6863] truncate">
+                    <p className="text-xs text-[#6E586B] truncate">
                       {selectedThread.matchRole} · {selectedThread.matchCity}
                     </p>
                   </div>
@@ -261,7 +261,7 @@ export function ActiveChatsView() {
                   <button
                     type="button"
                     onClick={() => setShowPromptRecap((v) => !v)}
-                    className="text-xs font-medium text-[#6B6863] hover:text-[#161615] px-3 py-1.5 rounded-full hairline bg-[#FAF8F5] transition-colors cursor-pointer"
+                    className="text-xs font-medium text-[#6E586B] hover:text-[#261428] px-3 py-1.5 rounded-full hairline bg-[#FFF7F2] transition-colors cursor-pointer"
                   >
                     {showPromptRecap ? "Hide prompts" : "Shared prompts"}
                   </button>
@@ -270,7 +270,7 @@ export function ActiveChatsView() {
                     <button
                       type="button"
                       onClick={() => setClosureModalOpen(true)}
-                      className="inline-flex items-center gap-1.5 text-xs font-medium text-[#B8502D] hover:bg-[#B8502D]/[0.08] px-3 py-1.5 rounded-full border border-[#B8502D]/25 transition-colors cursor-pointer"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-[#E84A5F] hover:bg-[#E84A5F]/[0.08] px-3 py-1.5 rounded-full border border-[#E84A5F]/25 transition-colors cursor-pointer"
                     >
                       <Feather className="h-3.5 w-3.5" />
                       <span className="hidden sm:inline">Close Politely</span>
@@ -287,18 +287,18 @@ export function ActiveChatsView() {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
-                    className="overflow-hidden bg-[#FAF8F5] hairline-b px-5 py-4 space-y-3 text-xs"
+                    className="overflow-hidden bg-[#FFF7F2] hairline-b px-5 py-4 space-y-3 text-xs"
                   >
                     <div>
-                      <p className="font-semibold text-[#161615]">
+                      <p className="font-semibold text-[#261428]">
                         Q1. {selectedThread.sharedPrompts.q1}
                       </p>
-                      <p className="text-[#6B6863] mt-1">
-                        <span className="font-medium text-[#B8502D]">You:</span>{" "}
+                      <p className="text-[#6E586B] mt-1">
+                        <span className="font-medium text-[#E84A5F]">You:</span>{" "}
                         {selectedThread.sharedPrompts.myA1}
                       </p>
-                      <p className="text-[#6B6863] mt-0.5">
-                        <span className="font-medium text-[#2F5E4E]">
+                      <p className="text-[#6E586B] mt-0.5">
+                        <span className="font-medium text-[#1E8E72]">
                           {selectedThread.matchName.split(" ")[0]}:
                         </span>{" "}
                         {selectedThread.sharedPrompts.theirA1}
@@ -309,12 +309,12 @@ export function ActiveChatsView() {
               </AnimatePresence>
 
               {/* Messages */}
-              <div className="flex-1 p-5 space-y-3.5 overflow-y-auto max-h-[420px] bg-[#FAF8F5]/40">
+              <div className="flex-1 p-5 space-y-3.5 overflow-y-auto max-h-[420px] bg-[#FFF7F2]/40">
                 {selectedThread.messages.map((msg) => {
                   if (msg.sender === "system") {
                     return (
                       <div key={msg.id} className="text-center py-1">
-                        <span className="inline-block text-[11px] text-[#6B6863] bg-white hairline px-3 py-1 rounded-full">
+                        <span className="inline-block text-[11px] text-[#6E586B] bg-white hairline px-3 py-1 rounded-full">
                           {msg.text}
                         </span>
                       </div>
@@ -331,13 +331,13 @@ export function ActiveChatsView() {
                       <div
                         className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                           isMe
-                            ? "bg-[#161615] text-[#FAF8F5] rounded-br-sm"
-                            : "bg-white text-[#161615] hairline rounded-bl-sm"
+                            ? "bg-[#261428] text-[#FFF7F2] rounded-br-sm"
+                            : "bg-white text-[#261428] hairline rounded-bl-sm"
                         }`}
                       >
                         {msg.text}
                       </div>
-                      <span className="text-[10px] text-[#9A9690] mt-1 px-1">
+                      <span className="text-[10px] text-[#9D889A] mt-1 px-1">
                         {msg.timestamp}
                       </span>
                     </div>
@@ -356,19 +356,19 @@ export function ActiveChatsView() {
                     value={draft}
                     onChange={(e) => setDraft(e.target.value)}
                     placeholder={`Write to ${selectedThread.matchName.split(" ")[0]}...`}
-                    className="flex-1 px-4 py-2.5 rounded-full bg-[#FAF8F5] hairline text-sm text-[#161615] placeholder:text-[#9A9690] focus:outline-none focus:border-[#161615]/30"
+                    className="flex-1 px-4 py-2.5 rounded-full bg-[#FFF7F2] hairline text-sm text-[#261428] placeholder:text-[#9D889A] focus:outline-none focus:border-[#261428]/30"
                   />
                   <button
                     type="submit"
                     disabled={!draft.trim()}
-                    className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-[#B8502D] hover:bg-[#9E4223] disabled:opacity-40 text-white transition-colors cursor-pointer shrink-0"
+                    className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-[#E84A5F] hover:bg-[#D2374C] disabled:opacity-40 text-white transition-colors cursor-pointer shrink-0"
                     aria-label="Send message"
                   >
                     <Send className="h-4 w-4" />
                   </button>
                 </form>
               ) : (
-                <div className="p-4 hairline-t bg-[#FAF8F5] text-center text-xs text-[#6B6863]">
+                <div className="p-4 hairline-t bg-[#FFF7F2] text-center text-xs text-[#6E586B]">
                   This conversation was closed politely on{" "}
                   {selectedThread.closedAt}. Your active chat slot has been
                   freed.
@@ -376,7 +376,7 @@ export function ActiveChatsView() {
               )}
             </>
           ) : (
-            <div className="flex-1 flex items-center justify-center p-10 text-center text-sm text-[#6B6863]">
+            <div className="flex-1 flex items-center justify-center p-10 text-center text-sm text-[#6E586B]">
               Select a conversation to begin.
             </div>
           )}
@@ -392,28 +392,28 @@ export function ActiveChatsView() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setClosureModalOpen(false)}
-              className="absolute inset-0 bg-[#161615]/40 backdrop-blur-[2px]"
+              className="absolute inset-0 bg-[#261428]/40 backdrop-blur-[2px]"
             />
             <motion.div
               initial={{ opacity: 0, scale: 0.96, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: 10 }}
-              className="relative w-full max-w-lg bg-white rounded-2xl hairline editorial-shadow p-6 space-y-5"
+              className="relative w-full max-w-lg bg-white rounded-3xl hairline editorial-shadow p-6 space-y-5"
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="font-serif text-2xl text-[#161615]">
+                  <h3 className="font-display font-bold text-2xl text-[#261428]">
                     Close politely with{" "}
                     {selectedThread.matchName.split(" ")[0]}
                   </h3>
-                  <p className="text-xs text-[#6B6863] mt-1">
+                  <p className="text-xs text-[#6E586B] mt-1">
                     Choose a respectful one-tap note. The thread will be
                     archived and your active chat slot will open immediately.
                   </p>
                 </div>
                 <button
                   onClick={() => setClosureModalOpen(false)}
-                  className="p-1.5 rounded-full text-[#6B6863] hover:text-[#161615] cursor-pointer"
+                  className="p-1.5 rounded-full text-[#6E586B] hover:text-[#261428] cursor-pointer"
                 >
                   <X className="h-4 w-4" />
                 </button>
@@ -427,8 +427,8 @@ export function ActiveChatsView() {
                     onClick={() => setSelectedClosureIdx(idx)}
                     className={`w-full text-left p-4 rounded-xl text-xs leading-relaxed transition-all cursor-pointer ${
                       selectedClosureIdx === idx
-                        ? "bg-[#FAF8F5] border border-[#B8502D] text-[#161615]"
-                        : "bg-white hairline text-[#6B6863] hover:bg-[#FAF8F5]/70"
+                        ? "bg-[#FFF7F2] border border-[#E84A5F] text-[#261428]"
+                        : "bg-white hairline text-[#6E586B] hover:bg-[#FFF7F2]/70"
                     }`}
                   >
                     “{note}”
@@ -440,14 +440,14 @@ export function ActiveChatsView() {
                 <button
                   type="button"
                   onClick={() => setClosureModalOpen(false)}
-                  className="px-4 py-2 rounded-full text-xs font-medium text-[#6B6863] hover:text-[#161615] cursor-pointer"
+                  className="px-4 py-2 rounded-full text-xs font-medium text-[#6E586B] hover:text-[#261428] cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="button"
                   onClick={handleConfirmClose}
-                  className="px-5 py-2.5 rounded-full bg-[#161615] hover:bg-[#2a2a28] text-white text-xs font-medium transition-colors cursor-pointer"
+                  className="px-5 py-2.5 rounded-full bg-[#261428] hover:bg-[#3D2240] text-white text-xs font-medium transition-colors cursor-pointer"
                 >
                   Send Note &amp; Free Slot
                 </button>

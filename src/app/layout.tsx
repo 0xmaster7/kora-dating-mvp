@@ -1,12 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, Plus_Jakarta_Sans } from "next/font/google";
+import { Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const instrumentSerif = Instrument_Serif({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal", "italic"],
-  variable: "--font-instrument-serif",
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-bricolage",
   display: "swap",
 });
 
@@ -18,7 +17,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Kora — Verified Alumni Dating",
+  title: "Kora — Playful, Verified Alumni Dating",
   description:
     "Anti-swipe, verification-first dating for 2020–2023 Indian tech & engineering graduates.",
   manifest: "/manifest.json",
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FAF8F5",
+  themeColor: "#FFF7F2",
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
@@ -52,9 +51,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${instrumentSerif.variable} ${plusJakartaSans.variable}`}
+      className={`${bricolage.variable} ${plusJakartaSans.variable}`}
     >
-      <body className="min-h-screen bg-[#FAF8F5] text-[#161615] antialiased selection:bg-[#B8502D]/15">
+      <body className="min-h-screen bg-[#FFF7F2] text-[#261428] antialiased selection:bg-[#E84A5F]/20">
         {children}
       </body>
     </html>

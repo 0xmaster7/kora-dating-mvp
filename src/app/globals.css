@@ -1,30 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  --bg-canvas: #FAF8F5;
+  --bg-canvas: #FFF7F2;
   --bg-surface: #FFFFFF;
-  --bg-subtle: #F3EFE9;
-  --ink: #161615;
-  --stone: #6B6863;
-  --stone-muted: #9A9690;
-  --terracotta: #B8502D;
-  --terracotta-hover: #9E4223;
-  --sage: #2F5E4E;
-  --hairline: rgba(22, 22, 21, 0.08);
-  --hairline-strong: rgba(22, 22, 21, 0.16);
+  --bg-blush: #FFE8DC;
+  --bg-lavender: #F4EEFF;
+  --bg-mint: #E6F7F2;
+  --ink: #261428;
+  --stone: #6E586B;
+  --stone-muted: #9D889A;
+  --coral: #E84A5F;
+  --coral-hover: #D2374C;
+  --plum: #331832;
+  --apricot: #FFB36B;
+  --mint: #1E8E72;
+  --hairline: rgba(38, 20, 40, 0.08);
+  --hairline-strong: rgba(38, 20, 40, 0.16);
 }
 
 @theme inline {
   --color-canvas: var(--bg-canvas);
   --color-surface: var(--bg-surface);
-  --color-subtle: var(--bg-subtle);
   --color-ink: var(--ink);
   --color-stone: var(--stone);
-  --color-stone-muted: var(--stone-muted);
-  --color-terracotta: var(--terracotta);
-  --color-terracotta-hover: var(--terracotta-hover);
-  --color-sage: var(--sage);
-  --font-serif: var(--font-instrument-serif), Georgia, serif;
+  --color-coral: var(--coral);
+  --color-plum: var(--plum);
+  --color-mint: var(--mint);
+  --font-serif: var(--font-bricolage), -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: var(--font-bricolage), -apple-system, BlinkMacSystemFont, sans-serif;
   --font-sans: var(--font-plus-jakarta-sans), -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -40,39 +43,41 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background-color: rgba(184, 80, 45, 0.14);
-  color: #161615;
+  background-color: rgba(232, 74, 95, 0.18);
+  color: #261428;
 }
 
 .hairline {
-  border: 1px solid rgba(22, 22, 21, 0.08);
+  border: 1.5px solid rgba(38, 20, 40, 0.08);
 }
 
 .hairline-b {
-  border-bottom: 1px solid rgba(22, 22, 21, 0.08);
+  border-bottom: 1.5px solid rgba(38, 20, 40, 0.08);
 }
 
 .hairline-t {
-  border-top: 1px solid rgba(22, 22, 21, 0.08);
+  border-top: 1.5px solid rgba(38, 20, 40, 0.08);
 }
 
 .hairline-r {
-  border-right: 1px solid rgba(22, 22, 21, 0.08);
+  border-right: 1.5px solid rgba(38, 20, 40, 0.08);
 }
 
 .editorial-shadow {
-  box-shadow: 0 1px 2px rgba(22, 22, 21, 0.04), 0 12px 32px -14px rgba(22, 22, 21, 0.08);
+  box-shadow: 0 4px 14px rgba(51, 24, 50, 0.05), 0 18px 40px -16px rgba(51, 24, 50, 0.12);
+}
+
+.playful-shadow {
+  box-shadow: 0 10px 28px -8px rgba(232, 74, 95, 0.28);
 }
 
 .safe-pb {
   padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
 }
 
-/* Custom subtle scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -83,6 +88,6 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(22, 22, 21, 0.14);
+  background: rgba(38, 20, 40, 0.15);
   border-radius: 9999px;
 }

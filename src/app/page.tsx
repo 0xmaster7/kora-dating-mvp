@@ -16,9 +16,9 @@ function KoraRouter() {
 
   if (!hydrated) {
     return (
-      <div className="min-h-screen bg-[#FAF8F5] flex items-center justify-center">
-        <span className="font-serif text-3xl text-[#161615]">
-          Kora<span className="text-[#B8502D]">.</span>
+      <div className="min-h-screen bg-[#FFF7F2] flex items-center justify-center">
+        <span className="font-display font-bold text-3xl text-[#261428]">
+          Kora<span className="text-[#E84A5F]">.</span>
         </span>
       </div>
     );
@@ -45,7 +45,7 @@ function KoraRouter() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 8 }}
-            className="fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-full bg-[#161615] text-[#FAF8F5] text-xs font-medium editorial-shadow whitespace-nowrap"
+            className="fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-full bg-[#261428] text-[#FFF7F2] text-xs font-medium editorial-shadow whitespace-nowrap"
           >
             {toast}
           </motion.div>
