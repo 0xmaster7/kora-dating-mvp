@@ -8,7 +8,7 @@ import {
   ShieldCheck,
   Smartphone,
   Sparkles,
-  Flame,
+  Compass,
 } from "lucide-react";
 import { useKora } from "@/context/KoraContext";
 import { AppTab } from "@/types/kora";
@@ -18,7 +18,7 @@ import { ProView } from "@/components/ProView";
 import { PrivacySettingsView } from "@/components/PrivacySettingsView";
 
 const NAV_ITEMS: { id: AppTab; label: string; shortLabel: string; icon: React.ElementType }[] = [
-  { id: "drop", label: "Discover", shortLabel: "Discover", icon: Flame },
+  { id: "drop", label: "Discover", shortLabel: "Discover", icon: Compass },
   { id: "chats", label: "Active Chats", shortLabel: "Chats", icon: MessageCircle },
   { id: "pro", label: "Kora Pro & Mixers", shortLabel: "Pro", icon: Sparkles },
   { id: "privacy", label: "Privacy & Safety", shortLabel: "Privacy", icon: Shield },
