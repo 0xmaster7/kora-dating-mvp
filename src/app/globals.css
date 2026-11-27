@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-canvas: #FAF8F5;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #F3EFE9;
+  --ink: #161615;
+  --stone: #6B6863;
+  --stone-muted: #9A9690;
+  --terracotta: #B8502D;
+  --terracotta-hover: #9E4223;
+  --sage: #2F5E4E;
+  --hairline: rgba(22, 22, 21, 0.08);
+  --hairline-strong: rgba(22, 22, 21, 0.16);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-canvas: var(--bg-canvas);
+  --color-surface: var(--bg-surface);
+  --color-subtle: var(--bg-subtle);
+  --color-ink: var(--ink);
+  --color-stone: var(--stone);
+  --color-stone-muted: var(--stone-muted);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-hover: var(--terracotta-hover);
+  --color-sage: var(--sage);
+  --font-serif: var(--font-instrument-serif), Georgia, serif;
+  --font-sans: var(--font-plus-jakarta-sans), -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  border-color: var(--hairline);
 }
 
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: rgba(184, 80, 45, 0.14);
+  color: #161615;
+}
+
+.hairline {
+  border: 1px solid rgba(22, 22, 21, 0.08);
+}
+
+.hairline-b {
+  border-bottom: 1px solid rgba(22, 22, 21, 0.08);
+}
+
+.hairline-t {
+  border-top: 1px solid rgba(22, 22, 21, 0.08);
+}
+
+.hairline-r {
+  border-right: 1px solid rgba(22, 22, 21, 0.08);
+}
+
+.editorial-shadow {
+  box-shadow: 0 1px 2px rgba(22, 22, 21, 0.04), 0 12px 32px -14px rgba(22, 22, 21, 0.08);
+}
+
+.safe-pb {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(22, 22, 21, 0.14);
+  border-radius: 9999px;
 }
