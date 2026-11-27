@@ -122,15 +122,13 @@ export function OnboardingFlow() {
             >
               <div className="space-y-2">
                 <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[#1E8E72]">
-                  Step 01 · Verified Alumni Trust Layer
+                  Step 01 · Quick Profile Verification
                 </span>
                 <h1 className="font-display font-bold text-4xl sm:text-[42px] leading-tight text-[#261428]">
-                  Verify your alumni status via eLitmus
+                  Verify you’re a real person
                 </h1>
                 <p className="text-sm text-[#6E586B] leading-relaxed">
-                  Kora uses eLitmus strictly as a lightweight graduation-year
-                  check for 2020–2023 cohorts. We never import or store your pH
-                  score, percentile, or job applications.
+                  Get a blue verified checkmark on your profile in seconds so matches know you’re genuinely you—no catfishing, no bots.
                 </p>
               </div>
 
@@ -141,7 +139,7 @@ export function OnboardingFlow() {
                       htmlFor="elitmus-id"
                       className="text-xs font-medium text-[#261428]"
                     >
-                      eLitmus Candidate ID
+                      Work or Personal Verification Handle
                     </label>
                     <div className="flex flex-col sm:flex-row gap-2.5">
                       <input
@@ -149,7 +147,7 @@ export function OnboardingFlow() {
                         type="text"
                         value={elitmusInput}
                         onChange={(e) => setElitmusInput(e.target.value)}
-                        placeholder="e.g. EL-2021-88412"
+                        placeholder="e.g. aarav@company.com or @aarav"
                         className="flex-1 px-4 py-3 rounded-xl bg-[#FFF7F2] hairline text-sm font-mono tracking-wide text-[#261428] focus:outline-none focus:border-[#261428]/30"
                       />
                       <button
@@ -157,7 +155,7 @@ export function OnboardingFlow() {
                         disabled={verifying}
                         className="px-5 py-3 rounded-xl bg-[#261428] hover:bg-[#3D2240] disabled:opacity-60 text-[#FFF7F2] text-sm font-medium transition-colors cursor-pointer shrink-0"
                       >
-                        {verifying ? "Checking..." : "Lookup Alumni Status"}
+                        {verifying ? "Checking..." : "Verify Profile"}
                       </button>
                     </div>
                   </div>
@@ -168,13 +166,9 @@ export function OnboardingFlow() {
                   <Lock className="h-4 w-4 text-[#1E8E72] mt-0.5 shrink-0" />
                   <div className="text-xs text-[#6E586B] leading-relaxed">
                     <span className="font-semibold text-[#261428]">
-                      Strict data minimization:
+                      Private by default:
                     </span>{" "}
-                    Only two fields are read from eLitmus —{" "}
-                    <span className="text-[#261428]">Grad Year (2020–2023)</span>{" "}
-                    and{" "}
-                    <span className="text-[#261428]">Verified Graduate status</span>
-                    . Your pH score is explicitly excluded at the API boundary.
+                    Your verification handle is never shown publicly on your dating profile—only your verified badge appears.
                   </div>
                 </div>
 
@@ -188,7 +182,7 @@ export function OnboardingFlow() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2 text-sm font-semibold text-[#1E8E72]">
                         <ShieldCheck className="h-4 w-4" />
-                        <span>Verified Graduate Badge Issued</span>
+                        <span>Profile Verified ✓</span>
                       </div>
                       <span className="text-[11px] font-mono text-[#1E8E72]">
                         {elitmusInput}
@@ -197,18 +191,18 @@ export function OnboardingFlow() {
                     <div className="grid grid-cols-2 gap-3 pt-2 border-t border-[#1E8E72]/15 text-xs">
                       <div>
                         <span className="text-[#6E586B] block">
-                          Graduation Cohort
+                          Verification Status
                         </span>
                         <span className="font-semibold text-[#261428]">
-                          Class of {state.account?.gradYear ?? 2021}
+                          Verified Member
                         </span>
                       </div>
                       <div>
                         <span className="text-[#6E586B] block">
-                          pH Score Imported
+                          Public Handle
                         </span>
                         <span className="font-semibold text-[#1E8E72]">
-                          None (Blocked by Design)
+                          Hidden (Private)
                         </span>
                       </div>
                     </div>
@@ -228,7 +222,7 @@ export function OnboardingFlow() {
                   }}
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#E84A5F] hover:bg-[#D2374C] text-white text-sm font-medium transition-colors cursor-pointer"
                 >
-                  <span>Continue to DPDP Consent</span>
+                  <span>Continue to Privacy</span>
                   <ArrowRight className="h-4 w-4" />
                 </button>
               </div>
@@ -247,15 +241,13 @@ export function OnboardingFlow() {
             >
               <div className="space-y-2">
                 <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[#E84A5F]">
-                  Step 02 · India DPDP Act, 2023
+                  Step 02 · Privacy & Control
                 </span>
                 <h1 className="font-display font-bold text-4xl sm:text-[42px] leading-tight text-[#261428]">
-                  Clear, itemized data consent
+                  You’re in control of your data
                 </h1>
                 <p className="text-sm text-[#6E586B] leading-relaxed">
-                  Under India’s Digital Personal Data Protection Act, you
-                  control every purpose your data is used for—and can withdraw
-                  consent or erase everything in one click at any time.
+                  Pick exactly what’s visible on your profile. You can change these settings or delete your account in one tap anytime.
                 </p>
               </div>
 
@@ -301,7 +293,7 @@ export function OnboardingFlow() {
                 <div className="p-5 sm:p-6 flex items-start justify-between gap-4">
                   <div className="space-y-1">
                     <h3 className="text-sm font-semibold text-[#261428]">
-                      Display Verified Graduate Badge
+                      Show Verified Checkmark
                     </h3>
                     <p className="text-xs text-[#6E586B] leading-relaxed">
                       Show “Verified ’{String(state.account?.gradYear ?? 2021).slice(-2)} Grad” on your card. Your eLitmus ID and test history are never visible.
@@ -341,16 +333,14 @@ export function OnboardingFlow() {
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
                       <h3 className="text-sm font-semibold text-[#261428]">
-                        No Ads &amp; Zero Job-Portal Data Crossover
+                        Zero Ads &amp; Zero Data Selling
                       </h3>
                       <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#1E8E72]/15 text-[#1E8E72]">
                         Guaranteed
                       </span>
                     </div>
                     <p className="text-xs text-[#6E586B] leading-relaxed">
-                      Your Kora dating profile, chats, and preferences are
-                      legally and technically isolated from eLitmus recruiters,
-                      employers, and third-party ad networks.
+                      Your dating profile, swipes, and messages are never sold to advertisers or shared with third parties.
                     </p>
                   </div>
                   <div className="h-6 w-6 rounded-full bg-[#1E8E72] text-white flex items-center justify-center shrink-0 mt-0.5">
@@ -560,7 +550,7 @@ export function OnboardingFlow() {
                   onClick={finishOnboarding}
                   className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-[#E84A5F] hover:bg-[#D2374C] text-white text-sm font-medium transition-colors editorial-shadow cursor-pointer"
                 >
-                  <span>Enter Thursday Drop</span>
+                  <span>Start Swiping</span>
                   <ArrowRight className="h-4 w-4" />
                 </button>
               </div>

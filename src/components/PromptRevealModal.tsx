@@ -91,8 +91,8 @@ export function PromptRevealModal({ match, onClose }: PromptRevealModalProps) {
                   src={match.photoUrl}
                   alt={match.name}
                   animate={{
-                    filter: revealed ? "blur(0px)" : "blur(8px)",
-                    scale: revealed ? 1 : 1.08,
+                    
+                    
                   }}
                   transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
                   className="h-full w-full object-cover"
@@ -106,8 +106,8 @@ export function PromptRevealModal({ match, onClose }: PromptRevealModalProps) {
                 </h2>
                 <p className="text-xs text-[#6E586B] mt-1">
                   {revealed
-                    ? "Both answers revealed · Photo unblurred"
-                    : "Answer 2 scenario questions to reveal both replies & unblur photos"}
+                    ? "Both answers revealed · Ready to chat"
+                    : "Answer 2 quick icebreakers to spark a real conversation"}
                 </p>
               </div>
             </div>
@@ -165,7 +165,7 @@ export function PromptRevealModal({ match, onClose }: PromptRevealModalProps) {
                   disabled={!a1.trim() || !a2.trim()}
                   className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#E84A5F] hover:bg-[#D2374C] disabled:opacity-45 text-white text-sm font-medium transition-colors cursor-pointer"
                 >
-                  <span>Reveal Answers &amp; Unblur Photo</span>
+                  <span>Send Icebreaker &amp; Match</span>
                   <ArrowRight className="h-4 w-4" />
                 </button>
               </div>
@@ -178,8 +178,8 @@ export function PromptRevealModal({ match, onClose }: PromptRevealModalProps) {
                   <motion.img
                     src={match.photoUrl}
                     alt={match.name}
-                    initial={{ filter: "blur(18px)", scale: 1.08 }}
-                    animate={{ filter: "blur(0px)", scale: 1 }}
+                    initial={{ scale: 0.96, opacity: 0.8 }}
+                    animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                     className="w-full h-full object-cover"
                   />
@@ -190,14 +190,14 @@ export function PromptRevealModal({ match, onClose }: PromptRevealModalProps) {
                     className="absolute bottom-2.5 left-2.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#1E8E72] text-white text-[11px] font-medium"
                   >
                     <LockOpen className="h-3 w-3" />
-                    <span>Unblurred</span>
+                    <span>Matched!</span>
                   </motion.div>
                 </div>
 
                 <div className="sm:col-span-7 space-y-2">
                   <div className="inline-flex items-center gap-1.5 text-xs font-medium text-[#1E8E72]">
                     <ShieldCheck className="h-3.5 w-3.5" />
-                    <span>Verified ’{String(match.gradYear).slice(-2)} Grad</span>
+                    <span>Verified Profile</span>
                   </div>
                   <h3 className="font-display font-bold text-3xl text-[#261428]">
                     {match.name}, {match.age}

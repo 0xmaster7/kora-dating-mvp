@@ -354,7 +354,7 @@ export const CITY_MIXERS: MixerEvent[] = [
     seatsTotal: 8,
     seatsRemaining: 2,
     priceInr: 1200,
-    cohorts: "2020–2023 Verified Grads",
+    cohorts: "Verified Members",
   },
   {
     id: "mix-pune",
@@ -365,7 +365,7 @@ export const CITY_MIXERS: MixerEvent[] = [
     seatsTotal: 8,
     seatsRemaining: 3,
     priceInr: 850,
-    cohorts: "2020–2023 Verified Grads",
+    cohorts: "Verified Members",
   },
   {
     id: "mix-hyd",
@@ -376,7 +376,7 @@ export const CITY_MIXERS: MixerEvent[] = [
     seatsTotal: 8,
     seatsRemaining: 4,
     priceInr: 1200,
-    cohorts: "2020–2023 Verified Grads",
+    cohorts: "Verified Members",
   },
 ];
 
@@ -407,7 +407,7 @@ export function createInitialThreads(): ChatThread[] {
         {
           id: "msg-n-1",
           sender: "system",
-          text: "Shared prompt completed · Photos unblurred for both of you.",
+          text: "It’s a match! Say hi to start the conversation.",
           timestamp: "Yesterday · 8:14 PM",
         },
         {
@@ -452,7 +452,7 @@ export function createInitialThreads(): ChatThread[] {
         {
           id: "msg-r-1",
           sender: "system",
-          text: "Shared prompt completed · Photos unblurred for both of you.",
+          text: "It’s a match! Say hi to start the conversation.",
           timestamp: "2 days ago · 7:42 PM",
         },
         {

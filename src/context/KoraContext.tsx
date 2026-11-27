@@ -221,13 +221,13 @@ export function KoraProvider({ children }: { children: React.ReactNode }) {
           {
             id: `log-elitmus-${Date.now()}`,
             timestamp: ts,
-            action: "eLitmus Alumni Verification",
+            action: "Profile Verification",
             detail: `Verified Grad Year (${prev.account?.gradYear ?? 2021}) via ${elitmusId}. Zero pH score imported.`,
           },
           ...prev.consentLog,
         ],
       }));
-      showToast("Alumni status verified via eLitmus");
+      showToast("Profile verified!");
     },
     [showToast]
   );
@@ -321,7 +321,7 @@ export function KoraProvider({ children }: { children: React.ReactNode }) {
         ...prev.consentLog,
       ],
     }));
-    showToast("Your Thursday Drop is ready");
+    showToast("Your swipe deck is ready!");
   }, [showToast]);
 
   const setActiveTab = useCallback((tab: AppTab) => {
@@ -377,7 +377,7 @@ export function KoraProvider({ children }: { children: React.ReactNode }) {
           {
             id: `sys-${Date.now()}`,
             sender: "system",
-            text: "Shared prompt completed · Photos unblurred for both of you.",
+            text: "It’s a match! Say hi to start the conversation.",
             timestamp: ts,
           },
           {
@@ -559,7 +559,7 @@ export function KoraProvider({ children }: { children: React.ReactNode }) {
       passedMatchIds: [],
       dropBatchOffset: prev.dropBatchOffset + 3,
     }));
-    showToast("Fresh Thursday Drop delivered (3 curated matches)");
+    showToast("Fresh profiles loaded!");
   }, [showToast]);
 
   const fillChatsToCap = useCallback(() => {
@@ -602,7 +602,7 @@ export function KoraProvider({ children }: { children: React.ReactNode }) {
           {
             id: `sys-cap-${m.id}`,
             sender: "system",
-            text: "Shared prompt completed · Photos unblurred for both of you.",
+            text: "It’s a match! Say hi to start the conversation.",
             timestamp: ts,
           },
           {

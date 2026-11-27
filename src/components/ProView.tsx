@@ -48,7 +48,7 @@ export function ProView() {
             <ul className="space-y-2.5 pt-2 text-xs text-[#261428]">
               {[
                 "3 curated Thursday Drop matches every week",
-                "eLitmus verified graduate badge (2020–2023)",
+                "Verified profile checkmark",
                 "Workplace & batchmate shield (up to 3 domains)",
                 "Progressive photo reveal & Max-3 active chat cap",
                 "Full DPDP consent controls & instant erasure",
@@ -133,7 +133,7 @@ export function ProView() {
             </h2>
             <p className="text-xs text-[#6E586B] mt-1">
               Curated 8-person dinners &amp; coffee tables hosted in quiet
-              neighbourhoods. Strictly verified 2020–2023 grads, zero awkward
+              neighbourhoods. Strictly verified members, zero awkward
               name-tag speed dating.
             </p>
           </div>

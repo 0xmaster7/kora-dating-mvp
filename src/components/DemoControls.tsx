@@ -59,7 +59,7 @@ export function DemoControls() {
               className="w-full text-left px-3 py-2 rounded-xl hover:bg-[#FFF7F2] text-xs text-[#261428] flex items-center gap-2.5 transition-colors cursor-pointer"
             >
               <RefreshCw className="h-3.5 w-3.5 text-[#E84A5F] shrink-0" />
-              <span>Trigger Fresh Match Drop</span>
+              <span>Reload Fresh Swipe Deck</span>
             </button>
 
             <button

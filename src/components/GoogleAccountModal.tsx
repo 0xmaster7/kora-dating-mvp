@@ -98,7 +98,7 @@ export function GoogleAccountModal() {
             <div className="px-6 py-4 bg-[#FFF7F2] hairline-t space-y-3">
               <label className="flex items-center justify-between gap-3 cursor-pointer select-none">
                 <span className="text-xs text-[#6E586B]">
-                  Skip onboarding &amp; jump straight to Thursday Drop
+                  Skip setup &amp; jump straight to Discover
                 </span>
                 <button
                   type="button"

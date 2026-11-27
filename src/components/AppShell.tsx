@@ -8,7 +8,7 @@ import {
   ShieldCheck,
   Smartphone,
   Sparkles,
-  Sun,
+  Flame,
 } from "lucide-react";
 import { useKora } from "@/context/KoraContext";
 import { AppTab } from "@/types/kora";
@@ -18,10 +18,10 @@ import { ProView } from "@/components/ProView";
 import { PrivacySettingsView } from "@/components/PrivacySettingsView";
 
 const NAV_ITEMS: { id: AppTab; label: string; shortLabel: string; icon: React.ElementType }[] = [
-  { id: "drop", label: "Thursday Drop", shortLabel: "Drop", icon: Sun },
+  { id: "drop", label: "Discover", shortLabel: "Discover", icon: Flame },
   { id: "chats", label: "Active Chats", shortLabel: "Chats", icon: MessageCircle },
   { id: "pro", label: "Kora Pro & Mixers", shortLabel: "Pro", icon: Sparkles },
-  { id: "privacy", label: "Privacy & DPDP", shortLabel: "Privacy", icon: Shield },
+  { id: "privacy", label: "Privacy & Safety", shortLabel: "Privacy", icon: Shield },
 ];
 
 export function AppShell() {
@@ -51,7 +51,7 @@ export function AppShell() {
               </span>
             </div>
             <p className="text-[11px] font-medium text-[#6E586B] mt-2">
-              Verified Alumni · 2020–2023
+              Playful, Real Dating
             </p>
           </div>
 
@@ -122,7 +122,7 @@ export function AppShell() {
                 </p>
                 <p className="text-[11px] text-[#1E8E72] flex items-center gap-1 truncate">
                   <ShieldCheck className="h-3 w-3 shrink-0" />
-                  <span>Verified ’{String(account.gradYear).slice(-2)}</span>
+                  <span>Verified Profile</span>
                 </p>
               </div>
             </button>

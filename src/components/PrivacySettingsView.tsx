@@ -51,7 +51,7 @@ export function PrivacySettingsView() {
       {/* Header */}
       <header className="pb-6 hairline-b space-y-2">
         <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[#1E8E72]">
-          DPDP Act, 2023 · User Rights &amp; Discretion
+          Safety &amp; Privacy Controls
         </span>
         <h1 className="font-display font-bold text-4xl sm:text-[44px] leading-tight text-[#261428]">
           Privacy &amp; Consent
@@ -169,7 +169,7 @@ export function PrivacySettingsView() {
       <section className="bg-white rounded-3xl hairline editorial-shadow divide-y divide-[#261428]/[0.08]">
         <div className="p-6">
           <h2 className="font-display font-bold text-2xl text-[#261428]">
-            Active DPDP Consents
+            Privacy Preferences
           </h2>
           <p className="text-xs text-[#6E586B] mt-1">
             Last updated: {state.dpdpConsent.updatedAt}
@@ -182,7 +182,7 @@ export function PrivacySettingsView() {
               Curated Matching Profile
             </p>
             <p className="text-xs text-[#6E586B]">
-              Include my profile in Thursday Drops for verified 2020–2023 grads.
+              Include my profile in Thursday Drops for verified members.
             </p>
           </div>
           <button
@@ -250,10 +250,10 @@ export function PrivacySettingsView() {
         <div className="p-5 sm:px-6 bg-[#1E8E72]/[0.04] flex items-center justify-between gap-4">
           <div>
             <p className="text-sm font-medium text-[#261428]">
-              No Ads · Zero Job-Portal Data Crossover
+              Zero Ads · Zero Data Selling
             </p>
             <p className="text-xs text-[#6E586B]">
-              Hard-enforced isolation from eLitmus recruiters and ad networks.
+              Your profile and messages are never sold to ad networks.
             </p>
           </div>
           <span className="inline-flex items-center gap-1 text-xs font-medium text-[#1E8E72]">

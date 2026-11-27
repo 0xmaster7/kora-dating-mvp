@@ -119,7 +119,7 @@ export function ActiveChatsView() {
                   onClick={() => setActiveTab("drop")}
                   className="text-xs font-medium text-[#E84A5F] hover:underline cursor-pointer"
                 >
-                  Go to Thursday Drop →
+                  Go to Discover →
                 </button>
               </div>
             ) : (
@@ -248,7 +248,7 @@ export function ActiveChatsView() {
                       </h2>
                       <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-medium text-[#1E8E72] bg-[#1E8E72]/[0.08] px-2 py-0.5 rounded-full">
                         <ShieldCheck className="h-3 w-3" />
-                        Verified ’{String(selectedThread.matchGradYear).slice(-2)}
+                        Verified
                       </span>
                     </div>
                     <p className="text-xs text-[#6E586B] truncate">
